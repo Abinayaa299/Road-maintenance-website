@@ -1,0 +1,7 @@
+CREATE OR REPLACE PROCEDURE incrementbud(bud_id budget.budget_id%TYPE,amt NUMBER) IS
+BEGIN
+	UPDATE budget SET 
+	AMOUNT=AMOUNT+amt
+	WHERE budget_id=bud_id;
+END;
+/

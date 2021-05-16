@@ -1,0 +1,10 @@
+create view authlocationview as select * from authlocation;
+create trigger authlocation_modify
+instead of insert
+on authlocationview
+for each row
+begin
+insert into authlocation
+values(:new.auth_id,:new.auth_loc);
+end;
+/
